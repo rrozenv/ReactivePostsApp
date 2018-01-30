@@ -54,6 +54,7 @@ final class UsersViewController: UIViewController, BindableType {
     
 }
 
+//MARK: - Error Handling
 extension UsersViewController {
     
     private func showError(_ error: Error) {
@@ -64,6 +65,7 @@ extension UsersViewController {
     
 }
 
+//MARK: - View Configuration
 extension UsersViewController {
     
     private func setupTableView() {

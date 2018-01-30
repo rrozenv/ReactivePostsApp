@@ -60,6 +60,7 @@ final class PostsViewController: UIViewController, BindableType {
     
 }
 
+//MARK: - Error Handling
 extension PostsViewController {
     
     private func showError(_ error: Error) {
@@ -70,6 +71,7 @@ extension PostsViewController {
     
 }
 
+//MARK: - View Configuration
 extension PostsViewController {
     
     private func setupTableView() {

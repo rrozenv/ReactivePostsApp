@@ -21,11 +21,7 @@ final class PostDetailViewController: UIViewController, BindableType {
         setupTableView()
         setupActivityIndicator()
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
@@ -78,6 +74,7 @@ final class PostDetailViewController: UIViewController, BindableType {
     
 }
 
+//MARK: - Tableview Delegate
 extension PostDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -98,6 +95,18 @@ extension PostDetailViewController: UITableViewDelegate {
     
 }
 
+//MARK: - Error Handling
+extension PostDetailViewController {
+    
+    private func showError(_ error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+//MARK: - View Configuration
 extension PostDetailViewController {
     
     private func sectionHeaderViewWith(title: String) -> UIView {
@@ -111,16 +120,6 @@ extension PostDetailViewController {
         titleLabel.text = title
         return view
     }
-    
-    private func showError(_ error: Error) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-}
-
-extension PostDetailViewController {
     
     private func setupTableView() {
         tableView = UITableView(frame: CGRect.zero, style: .grouped)
