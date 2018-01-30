@@ -13,10 +13,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        setRootTabBarViewController(in: window!)
         return true
+    }
+    
+    func setRootTabBarViewController(in window: UIWindow) {
+        let postsNavigationController = UINavigationController()
+        postsNavigationController.tabBarItem =
+            UITabBarItem(title: "Posts",
+                         image: nil,
+                         selectedImage: nil)
+        let postsRouter = PostsRouter(navigationController: postsNavigationController)
+        
+        let usersNavigationController = UINavigationController()
+        usersNavigationController.tabBarItem =
+            UITabBarItem(title: "Users",
+                         image: nil,
+                         selectedImage: nil)
+        let usersRouter = UsersRouter(navigationController: usersNavigationController)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            postsNavigationController,
+            usersNavigationController
+        ]
+        window.rootViewController = tabBarController
+        postsRouter.toPosts()
+        usersRouter.toUsers()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

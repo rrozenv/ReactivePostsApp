@@ -1,0 +1,27 @@
+{
+  "Mac" : [
+    {
+      "name" : "ReactiveJSON",
+      "hash" : "4841bc7b7439f3a728ffcb73442e4f6966afe8499d273077ff112054c81fd7a4"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "ReactiveJSON",
+      "hash" : "3ed046489b8aa24c30f0e2f932b834aa43877e1b614a41e3df914dca2bbe4fa7"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "ReactiveJSON",
+      "hash" : "6c10da466d4468c46677c8e8f73f97d3fd47f32ba49d1ae35dc0e6dc6d74e727"
+    }
+  ],
+  "commitish" : "0.1.0",
+  "iOS" : [
+    {
+      "name" : "ReactiveJSON",
+      "hash" : "b7a06042984dd9b8476941807c92491213cb76c4b10a2ea9900a0008f4938535"
+    }
+  ]
+}
